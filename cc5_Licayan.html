@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 5
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: lightseagreen;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <h1> Modified FLAMES </h1>
+
+        <button onclick="flames()">Match Names</button>
+        <h3 id="name"></h3>
+
+        <h4>FLAMES Result:</h4>
+        <h3 id="result"></h3>
+
+        <script>
+            function flames(){
+		var Fname= prompt("Enter your name: ");
+		var Sname= prompt("Enter your partner's name: ");
+			
+		document.getElementById("name").innerHTML=Fname + " + " + Sname;
+        var name1=Fname.replace(/[\s~`!@#$%^&*(){}\[\];:"'<,.>?\/\\|_+=-]/g, '');
+		var name2=Sname.replace(/[\s~`!@#$%^&*(){}\[\];:"'<,.>?\/\\|_+=-]/g, '');
+			  
+		var Nnum=name1.length;
+		var Mnum=name2.length;
+		var countN=Nnum+Mnum;
+			   
+		var FlMeaning=countN%6;
+			   
+		if(FlMeaning==1){
+			document.getElementById("result").innerHTML="Friends";
+		}
+		else if(FlMeaning==2){
+			document.getElementById("result").innerHTML="Lovers";
+		}
+		else if(FlMeaning==3){
+			document.getElementById("result").innerHTML="Acquaintances";
+		}
+		else if(FlMeaning==4){
+			document.getElementById("result").innerHTML="Marriage";
+		}
+		else if(FlMeaning==5){
+			document.getElementById("result").innerHTML="Enemies";
+		}
+		else if(FlMeaning==0){
+			document.getElementById("result").innerHTML="Sweethearts";
+		}
+            }
+        </script>
+    </body>
+</html>
